@@ -291,7 +291,7 @@ document.title="Create Project | Velzon - React Admin & Dashboard Template";
                                             </Link>
                                             <Link to="#" className="avatar-group-item" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-placement="top" title="Add Members">
                                                 <div className="avatar-xs" data-bs-toggle="modal" data-bs-target="#inviteMembersModal">
-                                                    <div className="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary">
+                                               <div className="avatar-title fs-16 rounded-circle bg-light border-dashed border text-primary">
                                                         +
                                                     </div>
                                                 </div>
