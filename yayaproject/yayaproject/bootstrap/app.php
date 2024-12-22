@@ -19,7 +19,13 @@ return Application::configure(basePath: dirname(__DIR__))
         $middleware->alias([
             'verified' => \App\Http\Middleware\EnsureEmailIsVerified::class,
         ]);
-
+->withLogging(function ($logging) {
+    $logging->useDailyFiles(
+        storage_path('logs/laravel.log'),
+        30,
+        'daily'
+    );
+})
         //
     })
     ->withExceptions(function (Exceptions $exceptions) {
