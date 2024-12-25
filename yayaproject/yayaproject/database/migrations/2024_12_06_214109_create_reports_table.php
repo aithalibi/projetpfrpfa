@@ -15,7 +15,7 @@ class CreateReportsTable extends Migration
             $table->string('status');
             $table->date('correction_date')->nullable();
             $table->date('submission_date');
-            $table->text('comments')->nullable();
+            $table->text('comments')->nullable()->after('status');
             $table->foreignId('student_id')->constrained('students');
             $table->foreignId('teacher_id')->constrained('teachers');
             $table->timestamps();
@@ -24,6 +24,10 @@ class CreateReportsTable extends Migration
 
     public function down()
     {
-        Schema::dropIfExists('reports');
+        // Schema::dropIfExists('reports');
+        Schema::table('reports', function (Blueprint $table) {
+            $table->dropColumn('comments');
+        });
+        
     }
 }
